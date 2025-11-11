@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 statusMessage.style.color = 'green';
                 form.reset();
 
-                // ⏳ Remove a mensagem após 3 segundos
+                //  Remove a mensagem após 3 segundos
                 setTimeout(() => {
                     statusMessage.textContent = '';
                 }, 3000);
