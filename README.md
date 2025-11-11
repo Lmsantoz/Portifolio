@@ -1,2 +1,2 @@
 # Portifolio
-Código do meu portifólio
+Arquivo do meu portifólio profissional 
