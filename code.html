@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configurações básicas de documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Futurista</title>
+    <title>Lucas Marques</title>
+
+    <!-- Ícones do Font Awesome (para ícones de redes sociais, tema, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
+            /* 
+               Paleta de cores em variáveis CSS para facilitar
+               o uso de tema claro e escuro 
+            */
+
             /* Cores modo claro */
             --light-bg: #f8f9fa;
             --light-text: #121212;
@@ -34,10 +43,14 @@
             --card: var(--light-card);
             --shadow: var(--light-shadow);
             
-            /* Transições suaves */
+            /* Transições suaves aplicadas em vários elementos */
             --transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
 
+        /* 
+           Quando a classe .dark-mode é adicionada ao <body>,
+           as variáveis passam a apontar para a paleta escura 
+        */
         .dark-mode {
             --bg: var(--dark-bg);
             --text: var(--dark-text);
@@ -48,12 +61,14 @@
             --shadow: var(--dark-shadow);
         }
 
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Estilização global do body */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
@@ -63,6 +78,7 @@
             overflow-x: hidden;
         }
 
+        /* Container centralizado com largura máxima */
         .container {
             width: 90%;
             max-width: 1200px;
@@ -70,11 +86,13 @@
             padding: 0 20px;
         }
 
+        /* Seções com espaçamento vertical padrão */
         section {
             padding: 100px 0;
             position: relative;
         }
 
+        /* Título de seção com animação */
         .section-title {
             text-align: center;
             margin-bottom: 60px;
@@ -100,6 +118,7 @@
             opacity: 0.8;
         }
 
+        /* Linha decorativa abaixo do título da seção */
         .section-title::after {
             content: '';
             position: absolute;
@@ -112,6 +131,7 @@
             border-radius: 2px;
         }
 
+        /* Botão padrão com gradiente e animações de hover */
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -129,6 +149,7 @@
             overflow: hidden;
         }
 
+        /* Efeito de brilho que passa pelo botão */
         .btn::before {
             content: '';
             position: absolute;
@@ -149,7 +170,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Header e Navegação */
+        /* Header fixo com navegação superior */
         header {
             position: fixed;
             top: 0;
@@ -157,12 +178,14 @@
             width: 100%;
             z-index: 1000;
             padding: 20px 0;
-            background-color: rgba(var(--card-rgb), 0.8);
+            /* OBS: aqui você está usando var(--card-rgb), mas essa variável não foi declarada */
+            background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             transition: var(--transition);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Navegação com logo à esquerda e links à direita */
         nav {
             display: flex;
             justify-content: space-between;
@@ -195,13 +218,14 @@
             padding: 5px 0;
             transition: var(--transition);
             text-decoration: none;
-            
         }
 
+        /* Remoção de sublinhado de qualquer <a> */
         a {
             text-decoration: none;
         }
 
+        /* Linha animada sob links ao passar o mouse */
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -221,6 +245,7 @@
             color: var(--primary);
         }
 
+        /* Botão para alternar tema (ícone lua/sol) */
         .theme-toggle {
             background: none;
             border: none;
@@ -236,7 +261,7 @@
             transform: rotate(30deg);
         }
 
-        /* Hero Section */
+        /* Seção hero (capa) ocupando altura total da tela */
         .hero {
             height: 100vh;
             display: flex;
@@ -245,6 +270,7 @@
             overflow: hidden;
         }
 
+        /* Efeito de “halo”/radial no fundo do hero */
         .hero::before {
             content: '';
             position: absolute;
@@ -289,7 +315,7 @@
             margin-right: 15px;
         }
 
-        /* Sobre */
+        /* Seção Sobre: layout em duas colunas (texto + imagem) */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -327,6 +353,7 @@
             box-shadow: 0 25px 50px var(--shadow);
         }
 
+        /* Moldura decorativa animada atrás da imagem */
         .about-image::after {
             content: '';
             position: absolute;
@@ -348,7 +375,7 @@
             bottom: 30px;
         }
 
-        /* Habilidades */
+        /* Seção Habilidades: grid de cards com ícones */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
@@ -372,6 +399,7 @@
             animation: fadeInUp 1s forwards;
         }
 
+        /* Delays individuais para animar cada skill-card em sequência */
         .skill-card:nth-child(1) { animation-delay: 0.2s; }
         .skill-card:nth-child(2) { animation-delay: 0.4s; }
         .skill-card:nth-child(3) { animation-delay: 0.6s; }
@@ -384,10 +412,12 @@
         .skill-card:nth-child(10) { animation-delay: 0.20s; }
         .skill-card:nth-child(11) { animation-delay: 0.22s; }
 
+        /* Bordas arredondadas genéricas para <img> */
         img{
             border-radius: 10px;
         }
 
+        /* Barra colorida na lateral esquerda do card de skill */
         .skill-card::before {
             content: '';
             position: absolute;
@@ -418,8 +448,7 @@
             color: transparent;
         }
 
-
-        /* Projetos */
+        /* Seção Projetos: cards em grid responsivo */
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -463,6 +492,7 @@
             transform: scale(1.1);
         }
 
+        /* Gradiente sobre a imagem para melhorar legibilidade */
         .project-image::after {
             content: '';
             position: absolute;
@@ -504,7 +534,7 @@
             margin-bottom: 8px;
         }
 
-        /* Contato */
+        /* Seção Contato: coluna com informações + formulário */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -568,7 +598,7 @@
             resize: vertical;
         }
 
-        /* Footer */
+        /* Rodapé com logo e redes sociais */
         footer {
             background-color: var(--card);
             padding: 50px 0;
@@ -601,7 +631,7 @@
             box-shadow: 0 10px 25px var(--shadow);
         }
 
-        /* Animações */
+        /* Animações utilizadas no site */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -650,7 +680,7 @@
             }
         }
 
-        /* Responsividade */
+        /* Responsividade para tablets e telas médias */
         @media (max-width: 992px) {
             .about-content,
             .contact-content {
@@ -661,11 +691,13 @@
                 font-size: 3rem;
             }
             
+            /* Esconde links do menu em telas menores (poderia entrar um menu hambúrguer) */
             .nav-links {
                 display: none;
             }
         }
 
+        /* Responsividade para telas menores (celular) */
         @media (max-width: 768px) {
             .projects-container {
                 grid-template-columns: 1fr;
@@ -682,11 +714,14 @@
     </style>
 </head>
 <body>
-    <!-- Header com Navegação -->
+    <!-- Header com navegação fixa no topo -->
     <header>
         <div class="container">
             <nav>
+                <!-- Logo principal -->
                 <div class="logo">Lucas Marques</div>
+
+                <!-- Links de navegação para as seções -->
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#about">Sobre</a></li>
@@ -694,6 +729,8 @@
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
+
+                <!-- Botão de alternância de tema (claro/escuro) -->
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -701,21 +738,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Seção principal (Hero) -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
+                <!-- Título principal, que recebe efeito de digitação via JS -->
                 <h1>Desenvolvedor Fullstack<span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent;"></span></h1>
                 <p>Transformando visões em realidades digitais com código inovador e design de ponta.</p>
                 <div class="hero-buttons">
+                    <!-- Botão de rolagem para projetos -->
                     <a href="#projects" class="btn">Ver Projetos</a>
+                    <!-- Botão secundário para contato (estilizado manualmente) -->
                     <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Contato</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre -->
+    <!-- Seção Sobre Mim -->
     <section id="about">
         <div class="container">
             <div class="section-title">
@@ -723,12 +763,16 @@
                 <p>Conheça minha jornada e paixão pelo desenvolvimento</p>
             </div>
             <div class="about-content">
+                <!-- Texto de apresentação -->
                 <div class="about-text">
                     <p>Olá! Sou um <strong>Desenvolvedor Fullstack</strong> com foco em criar experiências digitais futuristas e imersivas. Minha paixão é transformar ideias complexas em realidade através de código elegante e tecnologias de ponta.</p>
                     <p>Com background em desenvolvimento de software e design, tenho trabalhado com as mais modernas stacks tecnológicas para entregar soluções que não apenas funcionam perfeitamente, mas também encantam os usuários.</p>
                     <p>Quando não estou codando, gosto de explorar novas tecnologias, participar de hackathons e contribuir para projetos open-source que moldam o futuro digital.</p>
-                    <a href="#" class="btn">Download CV</a>
+                    <!-- Botão para download do CV (link ainda genérico) -->
+                    <a href="/portifolioL/Currículo - Lucas Marques.pdf" class="btn" download="/Currículo - Lucas Marques.pdf">Download CV</a>
                 </div>
+
+                <!-- Imagem ilustrativa do desenvolvedor -->
                 <div class="about-image">
                     <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6226224-ae58-4d0f-a6c0-ccf0af560ad4.png" alt="Desenvolvedor Futurista">
                 </div>
@@ -736,7 +780,7 @@
         </div>
     </section>
 
-    <!-- Habilidades -->
+    <!-- Seção de Habilidades -->
     <section id="skills">
         <div class="container">
             <div class="section-title">
@@ -744,6 +788,7 @@
                 <p>Tecnologias e ferramentas que domino</p>
             </div>
             <div class="skills-container">
+                <!-- Cada skill-card representa uma tecnologia, usando ícones/imagens SVG -->
                 <div class="skill-card">
                     <img src="assets/html-5-svgrepo-com.svg" alt="" width="64px">
                 </div>
@@ -756,6 +801,7 @@
                 <div class="skill-card">
                     <img src="assets/tailwind-svgrepo-com.svg" alt="" width="64px">
                 </div>
+                <!-- Exemplo de skill comentada (pode ser reativada futuramente) -->
                 <!--<div class="skill-card">
                     <img src="/assets/typescript-svgrepo-com (1).svg" alt="" width="64px">
                 </div>-->
@@ -781,7 +827,7 @@
         </div>
     </section>
 
-    <!-- Projetos -->
+    <!-- Seção de Projetos -->
     <section id="projects">
         <div class="container">
             <div class="section-title">
@@ -789,6 +835,7 @@
                 <p>Alguns dos meus trabalhos mais recentes</p>
             </div>
             <div class="projects-container">
+                <!-- Card de projeto 1 -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bb3a1de7-8947-48e6-8b88-aeee6a6c038e.png" alt="Projeto de Realidade Aumentada">
@@ -804,6 +851,8 @@
                         <a href="#" class="btn">Ver Detalhes</a>
                     </div>
                 </div>
+
+                <!-- Card de projeto 2 -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc8e70ab-e50d-4ab5-a524-de94adc357ab.png" alt="Projeto de IA Generativa">
@@ -819,6 +868,8 @@
                         <a href="#" class="btn">Ver Detalhes</a>
                     </div>
                 </div>
+
+                <!-- Card de projeto 3 -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a4fc199a-6d15-4914-afcc-10864963e4d4.png" alt="Projeto Blockchain">
@@ -838,7 +889,7 @@
         </div>
     </section>
 
-    <!-- Contato -->
+    <!-- Seção de Contato -->
     <section id="contact">
         <div class="container">
             <div class="section-title">
@@ -846,6 +897,7 @@
                 <p>Vamos trabalhar juntos no próximo grande projeto</p>
             </div>
             <div class="contact-content">
+                <!-- Informações de contato (texto) -->
                 <div class="contact-info">
                     <h3>Vamos conversar!</h3>
                     <p>Estou disponível para projetos desafiadores, oportunidades de freelance e posições em tempo integral.</p>
@@ -853,6 +905,8 @@
                     <p><i class="fas fa-phone"></i> <strong>Telefone:</strong> (11) 993997085</p>
                     <p><i class="fas fa-map-marker-alt"></i> <strong>Localização:</strong> São Paulo, Brasil</p>
                 </div>
+
+                <!-- Formulário de contato (sem backend neste momento) -->
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
@@ -874,11 +928,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Rodapé do site -->
     <footer>
         <div class="container">
             <div class="logo">DevFuturo</div>
             <div class="social-links">
+                <!-- Links para redes sociais (URLs ainda genéricas) -->
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -889,18 +944,21 @@
     </footer>
 
     <script>
+        // -------------------------------
         // Alternar tema claro/escuro
+        // -------------------------------
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         const icon = themeToggle.querySelector('i');
         
-        // Verificar se há preferência salva
+        // Verifica se o usuário já tem um tema salvo no localStorage
         if (localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark-mode');
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
         }
         
+        // Ao clicar no botão, alterna a classe .dark-mode no body e troca o ícone
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             
@@ -915,7 +973,9 @@
             }
         });
         
-        // Animação de scroll suave para links de navegação
+        // ----------------------------------------
+        // Animação de scroll suave para âncoras
+        // ----------------------------------------
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -925,6 +985,7 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Rolagem suave até a seção, descontando a altura do header (80px)
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -933,7 +994,9 @@
             });
         });
         
-        // Animação de elementos ao rolar a página
+        // -------------------------------------------------
+        // Animação de elementos (skills e projetos) ao rolar
+        // -------------------------------------------------
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.skill-card, .project-card');
             
@@ -941,6 +1004,7 @@
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
                 
+                // Quando o elemento entra na área visível, aplica a animação
                 if (elementPosition < screenPosition) {
                     element.style.animation = 'fadeInUp 1s forwards';
                 }
@@ -949,14 +1013,18 @@
         
         window.addEventListener('scroll', animateOnScroll);
         
-        // Efeito de digitação no título (opcional)
+        // -------------------------------------------------
+        // Efeito de digitação no título principal (Hero)
+        // -------------------------------------------------
         const typedText = document.querySelector('.hero-content h1');
         if (typedText) {
+            // Guarda o texto original e limpa o conteúdo
             const originalText = typedText.textContent;
             typedText.textContent = '';
             
             let i = 0;
             const typeWriter = () => {
+                // Vai adicionando letra por letra com um pequeno delay
                 if (i < originalText.length) {
                     typedText.textContent += originalText.charAt(i);
                     i++;
@@ -964,7 +1032,7 @@
                 }
             };
             
-            // Iniciar efeito de digitação após um breve delay
+            // Inicia o efeito de digitação após 1 segundo
             setTimeout(typeWriter, 1000);
         }
     </script>
