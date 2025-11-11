@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <!-- Configurações básicas de documento -->
     <meta charset="UTF-8">
@@ -24,7 +25,7 @@
             --light-accent: #7209b7;
             --light-card: #ffffff;
             --light-shadow: rgba(0, 0, 0, 0.1);
-            
+
             /* Cores modo escuro */
             --dark-bg: #0d1117;
             --dark-text: #f0f6fc;
@@ -33,7 +34,7 @@
             --dark-accent: #7ee787;
             --dark-card: #161b22;
             --dark-shadow: rgba(0, 0, 0, 0.4);
-            
+
             /* Variáveis ativas (inicialmente modo claro) */
             --bg: var(--light-bg);
             --text: var(--light-text);
@@ -42,7 +43,7 @@
             --accent: var(--light-accent);
             --card: var(--light-card);
             --shadow: var(--light-shadow);
-            
+
             /* Transições suaves aplicadas em vários elementos */
             --transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
@@ -400,20 +401,52 @@
         }
 
         /* Delays individuais para animar cada skill-card em sequência */
-        .skill-card:nth-child(1) { animation-delay: 0.2s; }
-        .skill-card:nth-child(2) { animation-delay: 0.4s; }
-        .skill-card:nth-child(3) { animation-delay: 0.6s; }
-        .skill-card:nth-child(4) { animation-delay: 0.8s; }
-        .skill-card:nth-child(5) { animation-delay: 0.10s; }
-        .skill-card:nth-child(6) { animation-delay: 0.12s; }
-        .skill-card:nth-child(7) { animation-delay: 0.14s; }
-        .skill-card:nth-child(8) { animation-delay: 0.16s; }
-        .skill-card:nth-child(9) { animation-delay: 0.18s; }
-        .skill-card:nth-child(10) { animation-delay: 0.20s; }
-        .skill-card:nth-child(11) { animation-delay: 0.22s; }
+        .skill-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .skill-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .skill-card:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .skill-card:nth-child(5) {
+            animation-delay: 0.10s;
+        }
+
+        .skill-card:nth-child(6) {
+            animation-delay: 0.12s;
+        }
+
+        .skill-card:nth-child(7) {
+            animation-delay: 0.14s;
+        }
+
+        .skill-card:nth-child(8) {
+            animation-delay: 0.16s;
+        }
+
+        .skill-card:nth-child(9) {
+            animation-delay: 0.18s;
+        }
+
+        .skill-card:nth-child(10) {
+            animation-delay: 0.20s;
+        }
+
+        .skill-card:nth-child(11) {
+            animation-delay: 0.22s;
+        }
 
         /* Bordas arredondadas genéricas para <img> */
-        img{
+        img {
             border-radius: 10px;
         }
 
@@ -466,9 +499,17 @@
             animation: fadeInUp 1s forwards;
         }
 
-        .project-card:nth-child(1) { animation-delay: 0.2s; }
-        .project-card:nth-child(2) { animation-delay: 0.4s; }
-        .project-card:nth-child(3) { animation-delay: 0.6s; }
+        .project-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
 
         .project-card:hover {
             transform: translateY(-10px) scale(1.02);
@@ -637,6 +678,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -648,6 +690,7 @@
                 opacity: 0;
                 transform: translateX(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -659,6 +702,7 @@
                 opacity: 0;
                 transform: translateX(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -670,10 +714,12 @@
                 transform: scale(1);
                 opacity: 0.05;
             }
+
             50% {
                 transform: scale(1.1);
                 opacity: 0.1;
             }
+
             100% {
                 transform: scale(1);
                 opacity: 0.05;
@@ -682,15 +728,16 @@
 
         /* Responsividade para tablets e telas médias */
         @media (max-width: 992px) {
+
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero-content h1 {
                 font-size: 3rem;
             }
-            
+
             /* Esconde links do menu em telas menores (poderia entrar um menu hambúrguer) */
             .nav-links {
                 display: none;
@@ -702,17 +749,18 @@
             .projects-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2.2rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header com navegação fixa no topo -->
     <header>
@@ -743,13 +791,16 @@
         <div class="container">
             <div class="hero-content">
                 <!-- Título principal, que recebe efeito de digitação via JS -->
-                <h1>Desenvolvedor Fullstack<span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent;"></span></h1>
+                <h1>Desenvolvedor Fullstack<span
+                        style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent;"></span>
+                </h1>
                 <p>Transformando visões em realidades digitais com código inovador e design de ponta.</p>
                 <div class="hero-buttons">
                     <!-- Botão de rolagem para projetos -->
                     <a href="#projects" class="btn">Ver Projetos</a>
                     <!-- Botão secundário para contato (estilizado manualmente) -->
-                    <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Contato</a>
+                    <a href="#contact" class="btn"
+                        style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Contato</a>
                 </div>
             </div>
         </div>
@@ -765,16 +816,23 @@
             <div class="about-content">
                 <!-- Texto de apresentação -->
                 <div class="about-text">
-                    <p>Olá! Sou um <strong>Desenvolvedor Fullstack</strong> com foco em criar experiências digitais futuristas e imersivas. Minha paixão é transformar ideias complexas em realidade através de código elegante e tecnologias de ponta.</p>
-                    <p>Com background em desenvolvimento de software e design, tenho trabalhado com as mais modernas stacks tecnológicas para entregar soluções que não apenas funcionam perfeitamente, mas também encantam os usuários.</p>
-                    <p>Quando não estou codando, gosto de explorar novas tecnologias, participar de hackathons e contribuir para projetos open-source que moldam o futuro digital.</p>
+                    <p>Olá! Sou um <strong>Desenvolvedor Fullstack</strong> com foco em criar experiências digitais
+                        futuristas e imersivas. Minha paixão é transformar ideias complexas em realidade através de
+                        código elegante e tecnologias de ponta.</p>
+                    <p>Com background em desenvolvimento de software e design, tenho trabalhado com as mais modernas
+                        stacks tecnológicas para entregar soluções que não apenas funcionam perfeitamente, mas também
+                        encantam os usuários.</p>
+                    <p>Quando não estou codando, gosto de explorar novas tecnologias, participar de hackathons e
+                        contribuir para projetos open-source que moldam o futuro digital.</p>
                     <!-- Botão para download do CV (link ainda genérico) -->
-                    <a href="/portifolioL/Currículo - Lucas Marques.pdf" class="btn" download="/Currículo - Lucas Marques.pdf">Download CV</a>
+                    <a href="/portifolioL/Currículo - Lucas Marques.pdf" class="btn"
+                        download="/Currículo - Lucas Marques.pdf">Download CV</a>
                 </div>
 
                 <!-- Imagem ilustrativa do desenvolvedor -->
                 <div class="about-image">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6226224-ae58-4d0f-a6c0-ccf0af560ad4.png" alt="Desenvolvedor Futurista">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6226224-ae58-4d0f-a6c0-ccf0af560ad4.png"
+                        alt="Desenvolvedor Futurista">
                 </div>
             </div>
         </div>
@@ -838,7 +896,8 @@
                 <!-- Card de projeto 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bb3a1de7-8947-48e6-8b88-aeee6a6c038e.png" alt="Projeto de Realidade Aumentada">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bb3a1de7-8947-48e6-8b88-aeee6a6c038e.png"
+                            alt="Projeto de Realidade Aumentada">
                     </div>
                     <div class="project-info">
                         <h3>App de Realidade Aumentada</h3>
@@ -855,7 +914,8 @@
                 <!-- Card de projeto 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc8e70ab-e50d-4ab5-a524-de94adc357ab.png" alt="Projeto de IA Generativa">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc8e70ab-e50d-4ab5-a524-de94adc357ab.png"
+                            alt="Projeto de IA Generativa">
                     </div>
                     <div class="project-info">
                         <h3>Plataforma de IA Generativa</h3>
@@ -872,7 +932,8 @@
                 <!-- Card de projeto 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a4fc199a-6d15-4914-afcc-10864963e4d4.png" alt="Projeto Blockchain">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a4fc199a-6d15-4914-afcc-10864963e4d4.png"
+                            alt="Projeto Blockchain">
                     </div>
                     <div class="project-info">
                         <h3>Ecosistema Blockchain</h3>
@@ -900,7 +961,8 @@
                 <!-- Informações de contato (texto) -->
                 <div class="contact-info">
                     <h3>Vamos conversar!</h3>
-                    <p>Estou disponível para projetos desafiadores, oportunidades de freelance e posições em tempo integral.</p>
+                    <p>Estou disponível para projetos desafiadores, oportunidades de freelance e posições em tempo
+                        integral.</p>
                     <p><i class="fas fa-envelope"></i> <strong>Email:</strong> lucaamarques2406@gmail.com</p>
                     <p><i class="fas fa-phone"></i> <strong>Telefone:</strong> (11) 993997085</p>
                     <p><i class="fas fa-map-marker-alt"></i> <strong>Localização:</strong> São Paulo, Brasil</p>
@@ -908,22 +970,23 @@
 
                 <!-- Formulário de contato (sem backend neste momento) -->
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Nome</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensagem</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Enviar Mensagem</button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
@@ -943,7 +1006,10 @@
         </div>
     </footer>
 
-    <script src="/portifolioL/contato.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="/portifolioL/code.js"></script>
+    <script src="/portifolioL/config.js"></script>
+    <script src="/portifolioL/email.js"></script>
 </body>
+
 </html>
